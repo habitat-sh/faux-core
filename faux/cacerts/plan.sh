@@ -4,10 +4,11 @@ pkg_version=""
 pkg_deps=()
 pkg_build_deps=()
 
+
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi
@@ -22,3 +23,4 @@ pkg_version ()
     build_date="$(cat "$HAB_CACHE_SRC_PATH/$pkg_filename"     | grep 'Certificate data from Mozilla'     | sed 's/^## Certificate data from Mozilla as of: //')";
     date --date="$build_date" "+%Y.%m.%d"
 }
+do_before() { update_pkg_version; }

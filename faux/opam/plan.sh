@@ -1,13 +1,14 @@
 pkg_name="opam"
 pkg_origin="faux"
 pkg_version="1.2.2"
-pkg_deps=(core/aspcud core/camlp4 core/diffutils core/gcc core/git core/glibc core/m4 core/make core/patch core/pkg-config core/rsync core/ocaml core/ocamlbuild core/which)
+pkg_deps=(faux/aspcud faux/camlp4 faux/diffutils faux/gcc faux/git faux/glibc faux/m4 faux/make faux/patch faux/pkg-config faux/rsync faux/ocaml faux/ocamlbuild faux/which)
 pkg_build_deps=()
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

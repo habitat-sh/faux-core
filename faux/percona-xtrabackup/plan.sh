@@ -1,13 +1,14 @@
 pkg_name="percona-xtrabackup"
 pkg_origin="faux"
 pkg_version="2.4.9"
-pkg_deps=(core/curl core/gcc-libs core/glibc core/libaio core/libev core/libgcrypt core/libgpg-error core/nghttp2 core/openssl core/zlib)
-pkg_build_deps=(core/m4 core/bison core/boost159 core/cmake core/gcc core/make core/ncurses core/vim)
+pkg_deps=(faux/curl faux/gcc-libs faux/glibc faux/libaio faux/libev faux/libgcrypt faux/libgpg-error faux/nghttp2 faux/openssl faux/zlib)
+pkg_build_deps=(faux/m4 faux/bison faux/boost159 faux/cmake faux/gcc faux/make faux/ncurses faux/vim)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

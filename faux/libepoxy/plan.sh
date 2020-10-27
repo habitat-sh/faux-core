@@ -1,13 +1,14 @@
 pkg_name="libepoxy"
 pkg_origin="faux"
 pkg_version="1.4.3"
-pkg_deps=(core/glibc core/libdrm core/libxau core/libxcb core/libxdamage core/libxdmcp core/libxext core/libxfixes core/mesa core/xlib)
-pkg_build_deps=(core/damageproto core/fixesproto core/gcc core/kbproto core/libpthread-stubs core/meson core/ninja core/pkg-config core/python core/xextproto core/xproto)
+pkg_deps=(faux/glibc faux/libdrm faux/libxau faux/libxcb faux/libxdamage faux/libxdmcp faux/libxext faux/libxfixes faux/mesa faux/xlib)
+pkg_build_deps=(faux/damageproto faux/fixesproto faux/gcc faux/kbproto faux/libpthread-stubs faux/meson faux/ninja faux/pkg-config faux/python faux/xextproto faux/xproto)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

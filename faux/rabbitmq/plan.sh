@@ -1,13 +1,14 @@
 pkg_name="rabbitmq"
 pkg_origin="faux"
 pkg_version="3.8.3"
-pkg_deps=(core/coreutils core/glibc core/erlang)
-pkg_build_deps=(core/bash core/diffutils core/gawk core/gcc core/git core/grep core/libxml2 core/libxslt core/make core/perl core/python2 core/rsync core/unzip core/zip core/elixir)
+pkg_deps=(faux/coreutils faux/glibc faux/erlang)
+pkg_build_deps=(faux/bash faux/diffutils faux/gawk faux/gcc faux/git faux/grep faux/libxml2 faux/libxslt faux/make faux/perl faux/python2 faux/rsync faux/unzip faux/zip faux/elixir)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

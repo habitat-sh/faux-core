@@ -1,13 +1,14 @@
 pkg_name="gdb"
 pkg_origin="faux"
 pkg_version="8.3"
-pkg_deps=(core/bdwgc core/expat core/glibc core/guile core/ncurses core/python core/readline core/xz core/zlib)
-pkg_build_deps=(core/coreutils core/dejagnu core/diffutils core/expect core/gcc core/make core/patch core/pkg-config core/texinfo)
+pkg_deps=(faux/bdwgc faux/expat faux/glibc faux/guile faux/ncurses faux/python faux/readline faux/xz faux/zlib)
+pkg_build_deps=(faux/coreutils faux/dejagnu faux/diffutils faux/expect faux/gcc faux/make faux/patch faux/pkg-config faux/texinfo)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

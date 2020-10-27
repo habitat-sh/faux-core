@@ -1,13 +1,14 @@
 pkg_name="boost159"
 pkg_origin="faux"
 pkg_version="1.59.0"
-pkg_deps=(core/glibc core/gcc-libs core/zlib)
-pkg_build_deps=(core/glibc core/gcc-libs core/coreutils core/diffutils core/patch core/make core/gcc core/python2 core/libxml2 core/libxslt core/openssl core/which)
+pkg_deps=(faux/glibc faux/gcc-libs faux/zlib)
+pkg_build_deps=(faux/glibc faux/gcc-libs faux/coreutils faux/diffutils faux/patch faux/make faux/gcc faux/python2 faux/libxml2 faux/libxslt faux/openssl faux/which)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

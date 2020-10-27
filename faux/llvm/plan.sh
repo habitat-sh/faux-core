@@ -1,13 +1,14 @@
 pkg_name="llvm"
 pkg_origin="faux"
 pkg_version="7.0.1"
-pkg_deps=(core/coreutils core/gcc-libs core/glibc core/libffi core/python2 core/zlib)
-pkg_build_deps=(core/cmake core/diffutils core/gcc core/ninja)
+pkg_deps=(faux/coreutils faux/gcc-libs faux/glibc faux/libffi faux/python2 faux/zlib)
+pkg_build_deps=(faux/cmake faux/diffutils faux/gcc faux/ninja)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi
