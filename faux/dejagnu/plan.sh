@@ -1,13 +1,14 @@
 pkg_name="dejagnu"
 pkg_origin="faux"
 pkg_version="1.6.2"
-pkg_deps=(core/expect core/coreutils core/sed core/grep)
-pkg_build_deps=(core/diffutils core/patch core/make core/gcc)
+pkg_deps=(faux/expect faux/coreutils faux/sed faux/grep)
+pkg_build_deps=(faux/diffutils faux/patch faux/make faux/gcc)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

@@ -1,13 +1,14 @@
 pkg_name="xmlsec1"
 pkg_origin="faux"
 pkg_version="1.2.30"
-pkg_deps=(core/glibc core/zlib core/libxml2 core/libgcrypt core/libtool)
-pkg_build_deps=(core/make core/gcc)
+pkg_deps=(faux/glibc faux/zlib faux/libxml2 faux/libgcrypt faux/libtool)
+pkg_build_deps=(faux/make faux/gcc)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

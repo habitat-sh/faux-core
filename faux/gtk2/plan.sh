@@ -1,13 +1,14 @@
 pkg_name="gtk2"
 pkg_origin="faux"
 pkg_version="2.24.31"
-pkg_deps=(core/atk core/bzip2 core/cairo core/expat core/fontconfig core/freetype core/gcc-libs core/gdk-pixbuf core/glib core/glibc core/harfbuzz core/libffi core/libiconv core/libpng core/libxau core/libxcb core/libxdmcp core/libxext core/libxrender core/pango core/pcre core/pixman core/util-linux core/xlib core/zlib)
-pkg_build_deps=(core/gcc core/kbproto core/make core/perl core/pkg-config core/renderproto core/shared-mime-info core/xextproto core/xproto)
+pkg_deps=(faux/atk faux/bzip2 faux/cairo faux/expat faux/fontconfig faux/freetype faux/gcc-libs faux/gdk-pixbuf faux/glib faux/glibc faux/harfbuzz faux/libffi faux/libiconv faux/libpng faux/libxau faux/libxcb faux/libxdmcp faux/libxext faux/libxrender faux/pango faux/pcre faux/pixman faux/util-linux faux/xlib faux/zlib)
+pkg_build_deps=(faux/gcc faux/kbproto faux/make faux/perl faux/pkg-config faux/renderproto faux/shared-mime-info faux/xextproto faux/xproto)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

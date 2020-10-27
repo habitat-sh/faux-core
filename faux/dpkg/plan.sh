@@ -1,13 +1,14 @@
 pkg_name="dpkg"
 pkg_origin="faux"
 pkg_version="1.19.7"
-pkg_deps=(core/bzip2 core/glibc core/ncurses core/tar core/zlib core/xz core/gcc-libs)
-pkg_build_deps=(core/autoconf core/automake core/bzip2 core/gcc core/gettext core/libtool core/patch core/make core/perl core/pkg-config core/xz core/zlib core/diffutils)
+pkg_deps=(faux/bzip2 faux/glibc faux/ncurses faux/tar faux/zlib faux/xz faux/gcc-libs)
+pkg_build_deps=(faux/autoconf faux/automake faux/bzip2 faux/gcc faux/gettext faux/libtool faux/patch faux/make faux/perl faux/pkg-config faux/xz faux/zlib faux/diffutils)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

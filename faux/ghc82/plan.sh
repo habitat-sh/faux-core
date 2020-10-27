@@ -1,13 +1,14 @@
 pkg_name="ghc82"
 pkg_origin="faux"
 pkg_version="8.2.2"
-pkg_deps=(core/gcc core/glibc core/gmp core/libedit core/libffi core/ncurses core/perl)
-pkg_build_deps=(core/binutils core/diffutils core/ghc82-bootstrap core/make core/patch core/sed)
+pkg_deps=(faux/gcc faux/glibc faux/gmp faux/libedit faux/libffi faux/ncurses faux/perl)
+pkg_build_deps=(faux/binutils faux/diffutils faux/ghc82-bootstrap faux/make faux/patch faux/sed)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

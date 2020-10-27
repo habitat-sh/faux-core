@@ -1,13 +1,14 @@
 pkg_name="gnuplot"
 pkg_origin="faux"
 pkg_version="5.2.6"
-pkg_deps=(core/bzip2 core/cairo core/expat core/fontconfig core/freetype core/gcc-libs core/glib core/glibc core/harfbuzz core/jbigkit core/libcerf core/liberation-fonts-ttf core/libffi core/libice core/libiconv core/libgd core/libjpeg-turbo core/libpng core/libsm core/libtiff core/libxau core/libxcb core/libxdmcp core/libxext core/ncurses core/pango core/pcre core/pixman core/readline core/xlib core/xz core/zlib)
-pkg_build_deps=(core/gcc core/make core/patch core/pkg-config)
+pkg_deps=(faux/bzip2 faux/cairo faux/expat faux/fontconfig faux/freetype faux/gcc-libs faux/glib faux/glibc faux/harfbuzz faux/jbigkit faux/libcerf faux/liberation-fonts-ttf faux/libffi faux/libice faux/libiconv faux/libgd faux/libjpeg-turbo faux/libpng faux/libsm faux/libtiff faux/libxau faux/libxcb faux/libxdmcp faux/libxext faux/ncurses faux/pango faux/pcre faux/pixman faux/readline faux/xlib faux/xz faux/zlib)
+pkg_build_deps=(faux/gcc faux/make faux/patch faux/pkg-config)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

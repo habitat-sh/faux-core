@@ -1,13 +1,14 @@
 pkg_name="msodbcsql17"
 pkg_origin="faux"
 pkg_version="17.2.0.1-1"
-pkg_deps=(core/gcc-libs core/glibc core/libtool core/krb5 core/openssl core/unixodbc core/util-linux core/zlib)
-pkg_build_deps=(core/binutils core/dpkg core/patchelf)
+pkg_deps=(faux/gcc-libs faux/glibc faux/libtool faux/krb5 faux/openssl faux/unixodbc faux/util-linux faux/zlib)
+pkg_build_deps=(faux/binutils faux/dpkg faux/patchelf)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

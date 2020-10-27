@@ -1,13 +1,14 @@
 pkg_name="patchelf"
 pkg_origin="faux"
 pkg_version="0.10"
-pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_deps=(faux/glibc faux/gcc-libs)
+pkg_build_deps=(faux/coreutils faux/diffutils faux/patch faux/make faux/gcc)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi
