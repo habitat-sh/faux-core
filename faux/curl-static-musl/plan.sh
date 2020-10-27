@@ -1,13 +1,14 @@
 pkg_name="curl-static-musl"
 pkg_origin="faux"
 pkg_version="7.70.0"
-pkg_deps=(core/cacerts)
-pkg_build_deps=(core/coreutils core/gcc core/make core/musl core/openssl-musl core/zlib-musl)
+pkg_deps=(faux/cacerts)
+pkg_build_deps=(faux/coreutils faux/gcc faux/make faux/musl faux/openssl-musl faux/zlib-musl)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

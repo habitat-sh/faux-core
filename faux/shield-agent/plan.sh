@@ -1,13 +1,14 @@
 pkg_name="shield-agent"
 pkg_origin="faux"
 pkg_version="0.10.8"
-pkg_deps=(core/bash core/bzip2 core/cacerts core/coreutils core/curl core/glibc core/jq-static core/libarchive)
-pkg_build_deps=(core/gcc core/git core/go core/gox core/make)
+pkg_deps=(faux/bash faux/bzip2 faux/cacerts faux/coreutils faux/curl faux/glibc faux/jq-static faux/libarchive)
+pkg_build_deps=(faux/gcc faux/git faux/go faux/gox faux/make)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

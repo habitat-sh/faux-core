@@ -1,13 +1,14 @@
 pkg_name="btrfs-progs"
 pkg_origin="faux"
 pkg_version="5.6.1"
-pkg_deps=(core/glibc core/util-linux core/e2fsprogs core/lzo core/zlib core/zstd)
-pkg_build_deps=(core/make core/gcc core/autoconf core/automake core/pkg-config core/python)
+pkg_deps=(faux/glibc faux/util-linux faux/e2fsprogs faux/lzo faux/zlib faux/zstd)
+pkg_build_deps=(faux/make faux/gcc faux/autoconf faux/automake faux/pkg-config faux/python)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

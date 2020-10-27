@@ -1,13 +1,14 @@
 pkg_name="libbsd"
 pkg_origin="faux"
 pkg_version="0.9.1"
-pkg_deps=(core/glibc)
-pkg_build_deps=(core/coreutils core/diffutils core/file core/gcc core/make core/patch core/pkg-config core/sed)
+pkg_deps=(faux/glibc)
+pkg_build_deps=(faux/coreutils faux/diffutils faux/file faux/gcc faux/make faux/patch faux/pkg-config faux/sed)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

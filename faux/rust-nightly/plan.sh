@@ -1,13 +1,14 @@
 pkg_name="rust-nightly"
 pkg_origin="faux"
 pkg_version=""
-pkg_deps=(core/glibc core/gcc-libs core/zlib core/gcc core/cacerts core/busybox-static)
-pkg_build_deps=(core/patchelf core/findutils core/coreutils core/sed)
+pkg_deps=(faux/glibc faux/gcc-libs faux/zlib faux/gcc faux/cacerts faux/busybox-static)
+pkg_build_deps=(faux/patchelf faux/findutils faux/coreutils faux/sed)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi
@@ -22,3 +23,4 @@ pkg_version ()
     v="$(cat "$CACHE_PATH/version")";
     echo "$(    echo "$v" | cut -d ' ' -f 1 | sed 's,-nightly$,,')-$(    echo "$v" | cut -d ' ' -f 3 | sed 's,)$,,')"
 }
+do_before() { update_pkg_version; }

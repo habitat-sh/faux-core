@@ -2,12 +2,13 @@ pkg_name="busybox-static"
 pkg_origin="faux"
 pkg_version="1.31.0"
 pkg_deps=()
-pkg_build_deps=(core/linux-headers-musl core/musl core/bash core/bison core/coreutils core/diffutils core/findutils core/flex core/gawk core/gcc core/gettext core/grep core/gzip core/libtool core/make core/patch core/sed core/texinfo core/util-linux core/wget core/xz)
+pkg_build_deps=(faux/linux-headers-musl faux/musl faux/bash faux/bison faux/coreutils faux/diffutils faux/findutils faux/flex faux/gawk faux/gcc faux/gettext faux/grep faux/gzip faux/libtool faux/make faux/patch faux/sed faux/texinfo faux/util-linux faux/wget faux/xz)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

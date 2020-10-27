@@ -1,13 +1,14 @@
 pkg_name="netcat-openbsd"
 pkg_origin="faux"
 pkg_version="1.105"
-pkg_deps=(core/glibc core/libbsd)
-pkg_build_deps=(core/gcc core/make core/patch core/pkg-config)
+pkg_deps=(faux/glibc faux/libbsd)
+pkg_build_deps=(faux/gcc faux/make faux/patch faux/pkg-config)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

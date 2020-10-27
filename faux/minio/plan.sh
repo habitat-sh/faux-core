@@ -4,10 +4,11 @@ pkg_version="2020-06-01T17-28-03Z"
 pkg_deps=()
 pkg_build_deps=()
 
+
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi

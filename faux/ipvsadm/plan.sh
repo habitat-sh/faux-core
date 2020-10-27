@@ -1,13 +1,14 @@
 pkg_name="ipvsadm"
 pkg_origin="faux"
 pkg_version="1.30"
-pkg_deps=(core/glibc core/popt core/libnl core/bash core/grep core/coreutils)
-pkg_build_deps=(core/busybox-static core/make core/gcc core/pkg-config core/patch)
+pkg_deps=(faux/glibc faux/popt faux/libnl faux/bash faux/grep faux/coreutils)
+pkg_build_deps=(faux/busybox-static faux/make faux/gcc faux/pkg-config faux/patch)
+
 
 do_build() { :; }
 do_install() { :; }
 
-if [ -z FIRST_PASS ]; then 
+if [ -v FIRST_PASS ]; then 
   pkg_deps=()
   pkg_build_deps=()
 fi
