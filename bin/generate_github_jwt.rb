@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby 
+
 require 'openssl'
 require 'jwt'  # https://rubygems.org/gems/jwt
 
@@ -19,5 +21,5 @@ def generate_jwt pem_file, install_id
   jwt = JWT.encode(payload, private_key, "RS256")
   puts jwt
 end
-puts ARGV
+
 generate_jwt ARGV[0], ARGV[1]

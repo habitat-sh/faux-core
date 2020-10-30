@@ -39,8 +39,7 @@ EOF
       echo "# the build program will properly evaluate the package version"
       echo "# This is done to simplify the parsing and generation of these faux plans"
       echo "unset pkg_version"
-      declare -f pkg_version
-
+      echo "pkg_version() { echo 'unknown-version'; }"
       echo "do_before() { update_pkg_version; }"
     fi
 
@@ -58,6 +57,8 @@ for plan in $SOURCE/**/plan.sh; do
   mkdir -p $ORIGIN/$plan_name
   
   generate_plan $plan > $ORIGIN/$plan_name/plan.sh
-
-
 done
+
+# Fixup Rust-nightly
+# This doesn't build due to version pinning
+rm -rf faux/rethinkdb
